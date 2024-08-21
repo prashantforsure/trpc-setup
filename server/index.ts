@@ -1,6 +1,7 @@
 import { z } from "zod";
-import { publicProcedure, router } from "./trpc";
+
 import { createHTTPServer } from '@trpc/server/adapters/standalone';
+import { publicProcedure, router } from "./trpc";
 
 const todoInputType = z.object({
 title: z.string(),
@@ -25,5 +26,4 @@ const server = createHTTPServer({
    
   server.listen(3000);
   
-export type appRouter = typeof appRouter;
-
+export type AppRouter = typeof appRouter;
